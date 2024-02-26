@@ -1,0 +1,5 @@
+# Functionality common across all Bazel commands
+# (See: https://bazel.build/run/bazelrc)
+
+# Enable Bzlmod
+common --enable_bzlmod

@@ -1,0 +1,26 @@
+"""
+Represents the Moe and Friends MuteBot V2.
+"""
+module(
+    name = "pinochle",
+    repo_name = "moe_best_roulette2"
+)
+
+bazel_dep(name = "rules_java", version = "7.4.0")
+bazel_dep(name = "rules_jvm_external", version = "6.0")
+bazel_dep(name = "rules_kotlin", version = "1.9.0")
+
+# Use a custom Kotlin toolchain for this module.
+# This is needed since we target higher (JVM 11) than the default (JVM 1.8).
+register_toolchains("//:kotlin_toolchain")
+
+# Install external dependencies from Maven
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    artifacts = [
+        "com.github.gestalt-config:gestalt-core:0.24.4",
+        "com.github.gestalt-config:gestalt-kotlin:0.24.4",
+        "com.github.gestalt-config:gestalt-toml:0.24.4",
+    ],
+)
+use_repo(maven, "maven")
