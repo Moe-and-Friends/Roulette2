@@ -1,7 +1,7 @@
 package moe.best.roulette2.config
 
 /**
- * 
+ * A hard-coded default configuration for the Moe and Friends Discord Guild.
  */
 object MoeAndFriendsConfiguration {
     val config = mapOf(
@@ -16,6 +16,9 @@ object MoeAndFriendsConfiguration {
         "roles.safe[1].name" to "Ice Guy",
         "roles.safe[2].id" to "1157317681159098448",
         "roles.safe[2].name" to "Rakka",
+
+        "roles.mute.id" to "672306562072576023",
+        "roles.mute.name" to "Timeout",
 
         "triggers[0].match" to "<:gamerwhen:651367432967159808>",
         "triggers[0].name" to "\"Gamer When\" Emoji",
