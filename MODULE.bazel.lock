@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "0607d6a480839d5ecebfe4d12fc2a448769bdce1596a65692e194391539eee65",
+  "moduleFileHash": "7cf9c611b862df501fe6b4c2a78809c156670b7f98ce595f5c2685c5b5eb482e",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -46,7 +46,9 @@
                 "artifacts": [
                   "com.github.gestalt-config:gestalt-core:0.24.4",
                   "com.github.gestalt-config:gestalt-kotlin:0.24.4",
-                  "com.github.gestalt-config:gestalt-toml:0.24.4"
+                  "com.github.gestalt-config:gestalt-toml:0.24.4",
+                  "org.javacord:javacord:3.8.0",
+                  "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0"
                 ]
               },
               "devDependency": false,
@@ -3080,6 +3082,8 @@
                 "{ \"group\": \"com.github.gestalt-config\", \"artifact\": \"gestalt-core\", \"version\": \"0.24.4\" }",
                 "{ \"group\": \"com.github.gestalt-config\", \"artifact\": \"gestalt-kotlin\", \"version\": \"0.24.4\" }",
                 "{ \"group\": \"com.github.gestalt-config\", \"artifact\": \"gestalt-toml\", \"version\": \"0.24.4\" }",
+                "{ \"group\": \"org.javacord\", \"artifact\": \"javacord\", \"version\": \"3.8.0\" }",
+                "{ \"group\": \"org.jetbrains.kotlinx\", \"artifact\": \"kotlinx-coroutines-core\", \"version\": \"1.8.0\" }",
                 "{ \"group\": \"com.google.code.findbugs\", \"artifact\": \"jsr305\", \"version\": \"3.0.2\" }",
                 "{ \"group\": \"com.google.code.gson\", \"artifact\": \"gson\", \"version\": \"2.8.9\" }",
                 "{ \"group\": \"com.google.errorprone\", \"artifact\": \"error_prone_annotations\", \"version\": \"2.3.2\" }",
