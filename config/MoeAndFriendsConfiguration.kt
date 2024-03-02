@@ -32,11 +32,14 @@ object MoeAndFriendsConfiguration {
         "actions[0].timeout.lowerBound" to "1m",
         "actions[0].timeout.upperBound" to "5m",
 
+        // "UNKNOWN" will be ignored by Gestalt.
         "actions[1].type" to "UNKNOWN",
-        "actions[1].weight" to "5",
+        "actions[1].weight" to "1",
 
+        // Missing bounds will automatically default to 0, or the lower bound.
+        // In general, do not rely on default behaviour and always specify both bounds.
         "actions[2].type" to "TIMEOUT",
-        "actions[2].weight" to "5",
+        "actions[2].weight" to "2",
         "actions[2].timeout.lowerBound" to "1m",
     )
 }

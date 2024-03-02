@@ -55,10 +55,12 @@ class GestaltConfigurationImpl : Configuration {
         get() = gestalt.getConfig("roles.safe", SAFE_ROLES)
 
     override val selfSafeMessages: List<String>
-        get() = gestalt.getConfig("mute_messages_self", SELF_SAFE_MESSAGES)
+        get() = gestalt.getConfig("messages.safe.self", SELF_SAFE_MESSAGES)
 
     override val actions: List<Action>
-        get() = gestalt.getConfig("actions", listOf())
+        get() = gestalt.getConfig("actions", listOf<Action>()).filterNot { 
+            it.type == Action.Type.UNKNOWN 
+        }
 
     private companion object Defaults {
         val ENV_CONFIG_PREFIX = "ROULETTE_"

@@ -5,7 +5,7 @@ data class Bounds(
     private val upperBound: String? = null, // Declare a default for Gestalt
 ) {
     val lowerBoundMinutes = lowerBound.toMinutes()
-    val upperBoundMinutes = maxOf(upperBound.toMinutes(), lowerBoundMinutes)
+    val upperBoundMinutes = upperBound.toMinutes()
 
     /**
      * An internal extension function for converting written lengths

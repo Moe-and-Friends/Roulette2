@@ -21,6 +21,7 @@ kt_jvm_library(
     name = "main",
     srcs = ["Main.kt"],
     deps = [
+        "//action:action_selector",
         "//config:configuration",
         "//config:gestalt_configuration_impl",
         "@maven//:org_javacord_javacord",
