@@ -1,7 +1,7 @@
 load("@rules_java//java:defs.bzl", "java_binary")
 load("@rules_kotlin//kotlin:core.bzl", "define_kt_toolchain")
 load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library")
-load("@rules_kotlin//kotlin:lint.bzl","ktlint_config", "ktlint_fix")
+load("@rules_kotlin//kotlin:lint.bzl", "ktlint_fix")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -22,6 +22,7 @@ kt_jvm_library(
     srcs = ["Main.kt"],
     deps = [
         "//config:configuration",
+        "//config:gestalt_configuration_impl",
         "@maven//:org_javacord_javacord",
         "@maven//:org_jetbrains_kotlinx_kotlinx_coroutines_core_jvm",
     ]

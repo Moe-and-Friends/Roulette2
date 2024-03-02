@@ -4,21 +4,20 @@ package moe.best.roulette2
 
 import kotlinx.coroutines.runBlocking
 import moe.best.roulette2.config.Configuration
+import moe.best.roulette2.config.GestaltConfigurationImpl
 import org.javacord.api.DiscordApi
 import org.javacord.api.DiscordApiBuilder
 import org.javacord.api.entity.intent.Intent
 
 fun main() = runBlocking {
-    val config = Configuration()
+    val config = GestaltConfigurationImpl() as Configuration
 
-    println(config.actions[1].type.toString())
-
-    //val discordApi: DiscordApi = DiscordApiBuilder().apply {
-    //    setToken(config.discordApiToken)
-    //    addIntents(
-    //        Intent.MESSAGE_CONTENT,
-    //        Intent.GUILD_MESSAGES,
-    //        Intent.GUILD_MESSAGE_REACTIONS,
-    //    )
-    //}.login().join()
+    val discordApi: DiscordApi = DiscordApiBuilder().apply {
+        setToken(config.discordApiToken)
+        addIntents(
+            Intent.MESSAGE_CONTENT,
+            Intent.GUILD_MESSAGES,
+            Intent.GUILD_MESSAGE_REACTIONS,
+        )
+    }.login().join()
 }

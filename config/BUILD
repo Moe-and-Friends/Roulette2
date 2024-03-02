@@ -6,6 +6,16 @@ kt_jvm_library(
     name = "configuration",
     srcs = ["Configuration.kt"],
     deps = [
+        "//config/types:action",
+        "//config/types:role",
+    ]
+)
+
+kt_jvm_library(
+    name = "gestalt_configuration_impl",
+    srcs = ["ConfigurationGestaltImpl.kt"],
+    deps = [
+        ":configuration",
         ":moe_and_friends_configuration",
         "//config/types:action",
         "//config/types:bounds",

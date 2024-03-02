@@ -2,6 +2,7 @@ package moe.best.roulette2.config
 
 /**
  * A hard-coded default configuration for the Moe and Friends Discord Guild.
+ * TODO: Move/rename this file.
  */
 object MoeAndFriendsConfiguration {
     val config = mapOf(
