@@ -7,6 +7,9 @@ kt_jvm_library(
     srcs = ["Configuration.kt"],
     deps = [
         ":moe_and_friends_configuration",
+        "//config/types:action",
+        "//config/types:bounds",
+        "//config/types:role",
         "@maven//:com_github_gestalt_config_gestalt_core",
         "@maven//:com_github_gestalt_config_gestalt_kotlin",
         "@maven//:com_github_gestalt_config_gestalt_toml",

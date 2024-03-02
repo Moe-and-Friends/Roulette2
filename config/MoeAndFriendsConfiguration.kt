@@ -23,4 +23,19 @@ object MoeAndFriendsConfiguration {
         "triggers[0].match" to "<:gamerwhen:651367432967159808>",
         "triggers[0].name" to "\"Gamer When\" Emoji",
     )
+
+
+    val actionsConfig = mapOf(
+        "actions[0].type" to "TIMEOUT",
+        "actions[0].weight" to "5",
+        "actions[0].timeout.lowerBound" to "1m",
+        "actions[0].timeout.upperBound" to "5m",
+
+        "actions[1].type" to "UNKNOWN",
+        "actions[1].weight" to "5",
+
+        "actions[2].type" to "TIMEOUT",
+        "actions[2].weight" to "5",
+        "actions[2].timeout.lowerBound" to "1m",
+    )
 }

@@ -1,5 +1,8 @@
 package moe.best.roulette2.config
 
+import moe.best.roulette2.config.types.Action
+import moe.best.roulette2.config.types.Bounds
+import moe.best.roulette2.config.types.Role
 import org.github.gestalt.config.builder.GestaltBuilder
 import org.github.gestalt.config.kotlin.getConfig
 import org.github.gestalt.config.reload.TimedConfigReloadStrategy
@@ -12,10 +15,15 @@ class Configuration {
 
     private val gestalt = GestaltBuilder().apply {
         // Default source right now is hard-coded for Moe and Friends server
-        addSource(
-            MapConfigSourceBuilder.builder().apply {
-                setCustomConfig(MoeAndFriendsConfiguration.config) 
-            }.build()
+        addSources(
+            listOf(
+                MapConfigSourceBuilder.builder().apply {
+                    setCustomConfig(MoeAndFriendsConfiguration.config) 
+                }.build(),
+                MapConfigSourceBuilder.builder().apply {
+                    setCustomConfig(MoeAndFriendsConfiguration.actionsConfig)
+                }.build(),
+            )
         )
 
         // Use URLConfig instead of Git, since the entire repo being stored locally is not needed.
@@ -52,11 +60,8 @@ class Configuration {
     val selfSafeMessages: List<String>
         get() = gestalt.getConfig("mute_messages_self", SELF_SAFE_MESSAGES)
 
-    // Inner class used only to load role types from configs.
-    data class Role(
-        var id: String = "", // Role IDs can overflow as integers.
-        var name: String = ""
-    )
+    val actions: List<Action>
+        get() = gestalt.getConfig("actions", listOf())
 
     private companion object Defaults {
         val ENV_CONFIG_PREFIX = "ROULETTE_"

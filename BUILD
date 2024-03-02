@@ -1,7 +1,7 @@
 load("@rules_java//java:defs.bzl", "java_binary")
 load("@rules_kotlin//kotlin:core.bzl", "define_kt_toolchain")
 load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_library")
-load("@rules_kotlin//kotlin:lint.bzl","ktlint_fix")
+load("@rules_kotlin//kotlin:lint.bzl","ktlint_config", "ktlint_fix")
 
 package(default_visibility = ["//visibility:public"])
 
